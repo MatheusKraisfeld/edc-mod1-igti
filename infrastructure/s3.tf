@@ -26,15 +26,3 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "datalake" {
     }
   }
 }
-
-resource "aws_s3_object" "codigo_spark" {
-  bucket = aws_s3_bucket.datalake.id
-  key    = "python-code/interact_s3.py"
-  acl    = "private"
-  source = "../interact_s3.py"
-  etag   = filemd5("../interact_s3.py")
-}
-
-provider "aws" {
-  region = "us-east-2"
-}
