@@ -30,7 +30,7 @@ jobs:
     - name: IaC Apply
       env:
         COMMAND_IAC: terraform
-      run:
+      run: |
         cd infrastructure
         $COMMAND_IAC init
         $COMMAND_IAC validate
