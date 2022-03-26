@@ -29,6 +29,7 @@ jobs:
 
       - name: Build Lambda package
         run: |
+          ls -a
           sh scripts/build_lambda_package.sh
       - name: IaC Apply
         env:
