@@ -34,7 +34,7 @@ def handler(event, context):
             "Ec2KeyName": "kraisfeld-igti-teste",
             "KeepJobFlowAliveWhenNoSteps": True,
             "TerminationProtected": False,
-            "Ec2SubnetId": "subnet-1df20360",
+            "Ec2SubnetId": "subnet-06b0c8495ab815042",
         },
         Applications=[
             {"Name": "Spark"},
