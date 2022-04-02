@@ -94,7 +94,9 @@ enemnovo = enemnovo.withColumn(
 
 
 logger.info("Pega os dados do Enem velhos na tabela Delta...")
-enemvelho = DeltaTable.forPath(spark, "s3://datalake-kraisfeld-igti-edc-tf/staging-zone/enem")
+enemvelho = DeltaTable.forPath(
+    spark, "s3://datalake-kraisfeld-igti-edc-tf/staging-zone/enem"
+)
 
 
 logger.info("Realiza o UPSERT...")

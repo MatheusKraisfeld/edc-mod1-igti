@@ -20,7 +20,14 @@ spark._jsc.hadoopConfiguration().set(
     "com.amazonaws.auth.InstanceProfileCredentialsProvider,com.amazonaws.auth.DefaultAWSCredentialsProviderChain",
 )
 
-df = spark.read.option("inferSchema", "true").csv(
-    "/mnt/c/Users/mathe/Downloads/IGTI/microdados_enem_2020/DADOS/MICRODADOS_ENEM_2020.csv"
+df = (
+    spark.read.option("inferSchema", "true")
+    .option("delimiter", ";")
+    .option("header", "true")
+    .csv(
+        "/mnt/c/Users/mathe/Downloads/IGTI/microdados_enem_2020/DADOS/MICRODADOS_ENEM_2020.csv"
+    )
 )
-df.write.mode("overwrite").parquet("s3a://datalake-kraisfeld-igti-edc/raw-data/enem/")
+df.write.mode("overwrite").partitionBy("TP_ANO_CONCLUIU").parquet(
+    "s3a://datalake-kraisfeld-igti-edc/raw-data/enem/"
+)
