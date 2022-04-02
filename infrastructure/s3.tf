@@ -1,9 +1,5 @@
-# HCL - Hashicorp Configuration Language
-# Linguaguem declarativa
-
-resource "aws_s3_bucket" "datalake" {
-  # Parâmetros de configuração do recurso escolhido
-  bucket = "${var.base_bucket_name}-${var.ambiente}-${var.numero_conta}"
+resource "aws_s3_bucket" "dl" {
+  bucket = "datalake-kraisfeld-igti-edc-tf"
 
   tags = {
     IES   = "IGTI",
@@ -11,13 +7,13 @@ resource "aws_s3_bucket" "datalake" {
   }
 }
 
-resource "aws_s3_bucket_acl" "datalake" {
-  bucket = aws_s3_bucket.datalake.id
+resource "aws_s3_bucket_acl" "dl" {
+  bucket = aws_s3_bucket.dl.id
   acl    = "private"
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "datalake" {
-  bucket = aws_s3_bucket.datalake.id
+resource "aws_s3_bucket_server_side_encryption_configuration" "dl" {
+  bucket = aws_s3_bucket.dl.id
 
   rule {
     apply_server_side_encryption_by_default {
