@@ -18,6 +18,7 @@ spark = (
         "spark.sql.catalog.spark_catalog",
         "org.apache.spark.sql.delta.catalog.DeltaCatalog",
     )
+    .config("spark.databricks.delta.retentionDurationCheck.enabled", "false")
     .getOrCreate()
 )
 
@@ -51,7 +52,7 @@ inscricoes = [
     200001071590,
     200001934470,
     200006066678,
-    200003343448
+    200003343448,
 ]
 
 
