@@ -13,7 +13,7 @@ def handler(event, context):
         JobFlowRole="EMR_EC2_DefaultRole",
         VisibleToAllUsers=True,
         LogUri="s3://datalake-kraisfeld-igti-edc-tf/emr-logs",
-        ReleaseLabel="emr-6.3.0",
+        ReleaseLabel="emr-6.4.0",
         Instances={
             "InstanceGroups": [
                 {
