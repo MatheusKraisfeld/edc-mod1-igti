@@ -35,3 +35,4 @@ spark._jsc.hadoopConfiguration().set(
 enemnovo = spark.read.format("delta").load(
     "s3a://datalake-kraisfeld-igti-edc-tf/staging-zone/enem"
 )
+enemnovo.show()
