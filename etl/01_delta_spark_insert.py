@@ -18,10 +18,10 @@ from delta.tables import *
 
 # Leitura de dados
 enem = (
-    spark.read.format("parquet")
-    #.option("inferSchema", True)
-    #.option("header", True)
-    #.option("delimiter", ";")
+    spark.read.format("csv")
+    .option("inferSchema", True)
+    .option("header", True)
+    .option("delimiter", ";")
     .load("s3://datalake-kraisfeld-igti-edc/raw-data/enem")
 )
 
