@@ -30,6 +30,6 @@ print("Writing delta table...")
 (
     enem.write.mode("overwrite")
     .format("delta")
-    .partitionBy("TP_ANO_CONCLUIU")
+    # .partitionBy("TP_ANO_CONCLUIU")
     .save("s3://datalake-kraisfeld-igti-edc-tf/staging-zone/enem")
 )
