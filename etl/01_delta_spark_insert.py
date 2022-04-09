@@ -21,7 +21,7 @@ enem = (
     spark.read.format("csv")
     .option("inferSchema", True)
     .option("header", True)
-    .option("delimiter", ";")
+    .option("delimiter", ",")
     .load("s3://datalake-kraisfeld-igti-edc/raw-data/enem")
 )
 
@@ -30,6 +30,6 @@ print("Writing delta table...")
 (
     enem.write.mode("overwrite")
     .format("delta")
-    # .partitionBy("TP_ANO_CONCLUIU")
+    .partitionBy("TP_ANO_CONCLUIU")
     .save("s3://datalake-kraisfeld-igti-edc-tf/staging-zone/enem")
 )
