@@ -19,7 +19,7 @@ variable "lambda_function_name" {
 }
 
 variable "key_pair_name" {
-  default = "kraisfeld-igti-teste"
+  default = "kraisfeld-ec2-airflow"
 }
 
 variable "airflow_subnet_id" {
