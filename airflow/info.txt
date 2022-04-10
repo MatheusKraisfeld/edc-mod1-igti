@@ -1,0 +1,14 @@
+On ec2 instance:
+ - git clone https://github.com/MatheusKraisfeld/edc-mod1-igti.git
+ - bash install_docker.sh
+ - exit 
+ - login again 
+ - docker-compose -f docker-compose-CeleryExecutor.yml up --scale worker=3 -d
+ - docker-compose -f docker-compose-CeleryExecutor.yml ps 
+ - exit
+ - logar no airflow (IPv4:8080 com usuario/senha airflow)
+ - criar novo usuario com role Admin
+ - logar com o novo usuario
+ - desativar usuario antigo
+ - cadastrar aws credentials
+ 

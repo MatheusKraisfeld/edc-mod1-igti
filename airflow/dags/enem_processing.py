@@ -56,7 +56,7 @@ def pipeline_enem():
                     "InstanceCount": 1,
                 },
             ],
-            "Ec2KeyName": "kraisfeld-igti-teste",
+            "Ec2KeyName": "kraisfeld-ec2-airflow",
             "KeepJobFlowAliveWhenNoSteps": True,
             "TerminationProtected": False,
             "Ec2SubnetId": "subnet-06b0c8495ab815042",
