@@ -33,7 +33,7 @@ df = (
 #     "s3a://datalake-kraisfeld-igti-edc/staging/enem/"
 # )
 
-df.write.mode("overwrite").csv(
+df.write.mode("overwrite").option('header', 'true').csv(
     "s3a://datalake-kraisfeld-igti-edc/raw-data/enem"
 )
 

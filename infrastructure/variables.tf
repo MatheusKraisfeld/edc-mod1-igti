@@ -17,3 +17,15 @@ variable "aws_region" {
 variable "lambda_function_name" {
   default = "IGTIexecutaEMR"
 }
+
+variable "key_pair_name" {
+  default = "kraisfeld-igti-teste"
+}
+
+variable "airflow_subnet_id" {
+  default = "subnet-016dde93f8c31d34e"
+}
+
+variable "vpc_id" {
+  default = "vpc-07ad677cc4474d563"
+}
