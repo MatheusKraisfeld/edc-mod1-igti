@@ -16,12 +16,12 @@ s3client = boto3.client("s3", aws_access_key_id=aws_access_key_id,
 
 # Usando a novíssima Taskflow API
 default_args = {
-    'owner': 'Neylson Crepalde',
+    'owner': 'Matheus Kraisfeld',
     "depends_on_past": False,
     "start_date": days_ago(2),
-    "email": ["airflow@airflow.com"],
-    "email_on_failure": False,
-    "email_on_retry": False
+    "email": ["matheuskraisfeld@gmail.com"],
+    "email_on_failure": True,
+    "email_on_retry": True
 }
 
 @dag(default_args=default_args, schedule_interval=None, catchup=False, tags=["emr", "aws", "enem"], description="Pipeline para processamento de dados do ENEM 2019")
